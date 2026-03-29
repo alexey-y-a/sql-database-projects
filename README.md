@@ -81,6 +81,16 @@ sql-database-projects/
 
 ## Установка и запуск
 
+### Установка PostgreSQL (если не установлен)
+
+**Для macOS (Homebrew):**
+```
+brew install postgresql@17
+brew services start postgresql@17
+```
+
+**Для Windows: Скачайте установщик с postgresql.org**
+
 ### Предварительные требования
 
 - PostgreSQL 17
@@ -96,13 +106,49 @@ CREATE DATABASE organization_db;
 
 ### Загрузка схем и данных
 
-#### Пример для vehicles_db
-
+### База данных 1 (Транспортные средства)
 - `psql -d vehicles_db -f database1_vehicles/scripts/create_tables.sql`
 - `psql -d vehicles_db -f database1_vehicles/scripts/insert_data.sql`
 
-#### Выполнение решений
+### База данных 2 (Автомобильные гонки)
+- `psql -d racing_db -f database2_racing/scripts/create_tables.sql`
+- `psql -d racing_db -f database2_racing/scripts/insert_data.sql`
+
+### База данных 3 (Бронирование отелей)
+- `psql -d hotels_db -f database3_hotels/scripts/create_tables.sql`
+- `psql -d hotels_db -f database3_hotels/scripts/insert_data.sql`
+
+### База данных 4 (Структура организации)
+- `psql -d organization_db -f database4_organization/scripts/create_tables.sql`
+- `psql -d organization_db -f database4_organization/scripts/insert_data.sql`
+
+### Выполнение решений
+
+### Пример для Базы данных 1
 - `psql -d vehicles_db -f database1_vehicles/solutions/task1.sql`
+- `psql -d vehicles_db -f database1_vehicles/solutions/task2.sql`
+
+### База данных 2
+- `psql -d racing_db -f database2_racing/solutions/task1.sql`
+- `psql -d racing_db -f database2_racing/solutions/task2.sql`
+- `psql -d racing_db -f database2_racing/solutions/task3.sql`
+- `psql -d racing_db -f database2_racing/solutions/task4.sql`
+- `psql -d racing_db -f database2_racing/solutions/task5.sql`
+
+### База данных 3
+- `psql -d hotels_db -f database3_hotels/solutions/task1.sql`
+- `psql -d hotels_db -f database3_hotels/solutions/task2.sql`
+- `psql -d hotels_db -f database3_hotels/solutions/task3.sql`
+
+### База данных 4
+- `psql -d organization_db -f database4_organization/solutions/task1.sql`
+
+###  Альтернативный способ (через DBeaver)
+
+- Откройте DBeaver и подключитесь к PostgreSQL
+- Выберите нужную базу данных в выпадающем списке
+- Откройте файл с решением (File → Open File)
+- Выполните запрос (Ctrl + Enter)
 
 #### Проверка решений
 
@@ -112,3 +158,4 @@ CREATE DATABASE organization_db;
 
 \copy (SELECT ...) TO 'result.csv' CSV HEADER;
 ```
+
