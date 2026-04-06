@@ -40,7 +40,7 @@ sql-database-projects/
 ├── database3_hotels/         # Бронирование отелей (3 задачи)
 │   ├── scripts/
 │   └── solutions/
-└── database4_organization/   # Структура организации (1 задача)
+└── database4_organization/   # Структура организации (3 задачи)
 ├── scripts/
 └── solutions/
 ```
@@ -78,6 +78,8 @@ sql-database-projects/
 | Задача | Описание |
 |--------|----------|
 | Task 1 | Рекурсивный вывод всех подчинённых Ивана Иванова |
+| Task 2 | Рекурсивный вывод всех подчинённых Ивана Иванова с количеством задач и прямыми подчинёнными |
+| Task 3 | Вывод менеджеров, у которых есть подчинённые (с общим количеством подчинённых рекурсивно) |
 
 ## Установка и запуск
 
@@ -142,6 +144,8 @@ CREATE DATABASE organization_db;
 
 ### База данных 4
 - `psql -d organization_db -f database4_organization/solutions/task1.sql`
+- `psql -d organization_db -f database4_organization/solutions/task2.sql`
+- `psql -d organization_db -f database4_organization/solutions/task3.sql`
 
 ###  Альтернативный способ (через DBeaver)
 
